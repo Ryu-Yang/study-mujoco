@@ -1,0 +1,13 @@
+<mujoco>
+    <!-- 球体：从斜坡滚下的初始物体 -->
+  <body name="ball" pos=".25 -.45 .1">
+    <freejoint name="ball"/>  <!-- 自由关节：6自由度运动 -->
+    <geom name="ball" type="sphere" size=".02" rgba=".65 .81 .55 1"/>
+  </body>
+
+  <!-- 目标盒子：将被骨牌撞击的物体 -->
+  <body name="box" pos="-.3 -.14 .05501" euler="0 0 -30">
+    <freejoint name="box"/>  <!-- 自由关节：可被撞击移动 -->
+    <geom name="box" size=".01 .01 .01" rgba=".0 .7 .79 1"/>
+  </body>
+</mujoco>

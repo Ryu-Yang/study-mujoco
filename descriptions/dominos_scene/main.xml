@@ -1,0 +1,53 @@
+<mujoco>
+  <!-- 资源定义：纹理和材质 -->
+  <asset>
+    <!-- 天空盒纹理：渐变背景 -->
+    <texture type="skybox" builtin="gradient" rgb1=".3 .5 .7" rgb2="0 0 0" width="32" height="512"/>
+    <!-- 网格纹理：棋盘格图案 -->
+    <texture name="grid" type="2d" builtin="checker" width="512" height="512" rgb1=".1 .2 .3" rgb2=".2 .3 .4"/>
+    <!-- 网格材质：应用网格纹理 -->
+    <material name="grid" texture="grid" texrepeat="2 2" texuniform="true" reflectance=".2"/>
+  </asset>
+
+  <!-- 统计信息：设置平均尺寸 -->
+  <statistic meansize=".01"/>
+
+  <!-- 视觉设置：渲染参数 -->
+  <visual>
+    <global offheight="2160" offwidth="3840"/>
+    <quality offsamples="8"/>
+  </visual>
+
+  <!-- 默认参数：几何体属性 -->
+  <default>
+    <geom type="box" solref=".005 1"/>
+    <default class="static">
+      <geom rgba=".3 .5 .7 1"/>
+    </default>
+  </default>
+
+  <!-- 仿真选项：时间步长 -->
+  <option timestep="5e-4"/>
+
+  <worldbody>
+    <!-- 环境几何体：地板、斜坡、光源、固定相机 -->
+    <geom name="floor" type="plane" size="3 3 .01" pos="-0.025 -0.295  0" material="grid"/>
+    <geom name="ramp" pos=".25 -.45 -.03" size=".04 .1 .07" euler="-30 0 0" class="static"/>
+    
+    <!-- 光源设置 -->
+    <light pos=".3 -.3 .8" mode="trackcom" diffuse="1 1 1" specular=".3 .3 .3"/>
+    <light pos="0 -.3 .4" mode="targetbodycom" target="box" diffuse=".8 .8 .8" specular=".3 .3 .3"/>
+    
+    <!-- 固定相机：顶部视角 -->
+    <camera name="top" pos="-0.37 -0.78 0.49" xyaxes="0.78 -0.63 0 0.27 0.33 0.9"/>
+
+    <!-- 包含球体和盒子 -->
+    <include file="ball_and_box.xml"/>
+    
+    <!-- 包含多米诺骨牌序列 -->
+    <include file="domino_chain.xml"/>
+    
+    <!-- 包含跷跷板结构 -->
+    <include file="seesaw.xml"/>
+  </worldbody>
+</mujoco>

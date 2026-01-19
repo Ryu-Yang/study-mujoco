@@ -1,0 +1,13 @@
+<mujoco>
+  <!-- 跷跷板结构 -->
+  <body name="seasaw_wrapper" pos="-.23 -.1 0" euler="0 0 30">
+    <geom size=".01 .01 .015" pos="0 .05 .015" class="static"/>
+    <geom size=".01 .01 .015" pos="0 -.05 .015" class="static"/>
+    <geom type="cylinder" size=".01 .0175" pos="-.09 0 .0175" class="static"/>
+    <body name="seasaw" pos="0 0 .03">
+      <joint axis="0 1 0"/>  <!-- 旋转关节：绕Y轴旋转 -->
+      <geom type="cylinder" size=".005 .039" zaxis="0 1 0" rgba=".84 .15 .33 1"/>
+      <geom size=".1 .02 .005" pos="0 0 .01" rgba=".84 .15 .33 1"/>
+    </body>
+  </body>
+</mujoco>

@@ -1,0 +1,39 @@
+<mujoco>
+  <!-- 多米诺骨牌序列：6个按角度排列的骨牌 -->
+  
+  <!-- 第一个骨牌：-90度 -->
+  <body pos=".26 -.3 .03" euler="0 0 -90.0">
+    <freejoint/>
+    <geom size=".0015 .015 .03" rgba="1 .5 .5 1"/>
+  </body>
+
+  <!-- 第二个骨牌：-81度 -->
+  <body pos=".26 -.27 .04" euler="0 0 -81.0">
+    <freejoint/>
+    <geom size=".002 .02 .04" rgba="1 1 .5 1"/>
+  </body>
+
+  <!-- 第三个骨牌：-63度 -->
+  <body pos=".24 -.21 .06" euler="0 0 -63.0">
+    <freejoint/>
+    <geom size=".003 .03 .06" rgba=".5 1 .5 1"/>
+  </body>
+
+  <!-- 第四个骨牌：-45度 -->
+  <body pos=".2 -.16 .08" euler="0 0 -45.0">
+    <freejoint/>
+    <geom size=".004 .04 .08" rgba=".5 1 1 1"/>
+  </body>
+
+  <!-- 第五个骨牌：-27度 -->
+  <body pos=".15 -.12 .1" euler="0 0 -27.0">
+    <freejoint/>
+    <geom size=".005 .05 .1" rgba=".5 .5 1 1"/>
+  </body>
+
+  <!-- 第六个骨牌：-9度 -->
+  <body pos=".09 -.1 .12" euler="0 0 -9.0">
+    <freejoint/>
+    <geom size=".006 .06 .12" rgba="1 .5 1 1"/>
+  </body>
+</mujoco>
